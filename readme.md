@@ -2,11 +2,11 @@
 * [Code](./Code)
   * [1_hello_world.c](./Code/1.c)
     * hello world of OpenMP
-    * code in structured block following
+    * code in structured block following "# pragma omp parallel" is executed by every thread possibly available
     ```
     # pragma omp parallel
     ```
-    is executed by every thread possibly available
+
   * [2_serial_pi.c](./Code/2_serial_pi.c)
     * pragma omp parallel - get me default number of system threads
     * my system has 12 threads. 2 threads per core
