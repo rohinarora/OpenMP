@@ -1,0 +1,4 @@
+* On the Linux systems in COE, we have OpenMP installed as part of the gcc compiler.  The version of OpenMP (3.1 or 4.0) will depend on the version of Linux installed on the particular system you are working on.
+* The gcc wiki says:
+  * As of GCC 4.2, the compiler implements version 2.5 of the OpenMP specification, as of 4.4 it implements version 3.0 and since GCC 4.7 it supports the OpenMP 3.1 specification. GCC 4.9 supports OpenMP 4.0 with the follow exceptions (as of 2013-11-28): the new 4.0 directives are not yet supported in Fortran and omp target will always run on the host
+* You can check the version of gcc installed on the node by issuing gcc -v.  I have posted the OpenMP 3.1 and 4.0 Quick Reference Guides.  Version 3.1 is more than enough for you to complete any work in this class.
