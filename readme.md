@@ -1,1 +1,1 @@
-* Nice slides- ./slides
+* Nice slides- [./slides](./slides)
