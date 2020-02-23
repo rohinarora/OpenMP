@@ -10,6 +10,7 @@
   ```
 
 * [2_serial_pi.c](./Code/2_serial_pi.c)
+  * serial program to calculate pi via integration
   * pragma omp parallel - get me default number of system threads
   * my system has 12 threads. 2 threads per core
 * [2_parallel_pi_v1.c](./Code/2_parallel_pi_v1.c)
@@ -24,3 +25,6 @@
   * works ! extremely good
   * but hacky poor solution. how would you know the size of L1 cache line? how would your code work across architectures?
 * [2_parallel_pi_v3.c](./Code/2_parallel_pi_v3.c)
+
+### ToDo
+* Add [google benchmark](https://github.com/google/benchmark) to codes

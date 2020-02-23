@@ -7,11 +7,6 @@ This program will numerically compute the integral of
 from 0 to 1.  The value of this integral is pi -- which
 is great since it gives us an easy way to check the answer.
 
-The is the original sequential program.  It uses the timer
-from the OpenMP runtime library
-
-History: Written by Tim Mattson, 11/99.
-
 */
 #include <stdio.h>
 #include <omp.h>
