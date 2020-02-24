@@ -3,7 +3,7 @@
  * @email rohinarora07@gmail.com
  * @create date 2020-02-22
  * @modify date 2020-02-24
- 
+
 This program will numerically compute the integral of
 
                   4/(1+x*x)
@@ -28,12 +28,15 @@ int main()
 	start_time = omp_get_wtime();
 #pragma omp parallel
 	{
+#pragma omp single
+		printf(" num_threads = %d", omp_get_num_threads());
 		int i;
 		double x; // must be declared here so that x is local to each thread. If this is global. All threads would be accessing this memory all the time. Either wrong result, ot too slow
 #pragma omp for reduction(+ \
 						  : sum)
 		for (i = 1; i <= num_steps; i++)
 		{
+
 			x = (i - 0.5) * step;		// or (i+0.5)*step; if i starts from 0
 			sum += 4.0 / (1.0 + x * x); // 4.0 and 1.0 ensure this is double
 		}

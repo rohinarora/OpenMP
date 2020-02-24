@@ -128,4 +128,6 @@
   * default(none) is very helpful when debugging manually
 * Slide 119. Mandelbrot Area program bug fix
 * Slide 121. Same as ../Code/2_parallel_pi_v4_2.c
-  * Just 2 line change. Goal for parallel programming. Serial code doesn't break. 
+  * Just 2 line change. Goal for parallel programming. Serial code doesn't break.
+* Slide 123. Review
+* Slide 124. There is no "while" loop in OpenMP. How to LL traversal?

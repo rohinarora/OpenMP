@@ -16,7 +16,7 @@ This program introduces OpenMP for the application
 */
 #include <stdio.h>
 #include <omp.h>
-#define NUM_THREADS 2
+#define NUM_THREADS 12
 static long num_steps = 1000000000;
 double step;
 int main()
@@ -29,6 +29,8 @@ int main()
 	start_time = omp_get_wtime();
 #pragma omp parallel
 	{
+#pragma omp single
+		printf(" num_threads = %d", omp_get_num_threads());
 		int nthrds, i, id;
 		double x;
 		id = omp_get_thread_num();
