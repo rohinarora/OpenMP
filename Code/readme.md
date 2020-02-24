@@ -3,6 +3,8 @@
 * clang -fopenmp  -L/usr/local/opt/llvm/lib -I/usr/local/opt/llvm/include \<filename\> && ./a.out
 * Works with clang version 9.0.1 , x86_64-apple-darwin19.3.0
 
+### Code Examples
+
 * [1_hello_world.c](./Code/1.c)
   * hello world of OpenMP
   * code in structured block following "# pragma omp parallel" is executed by every thread possibly available
