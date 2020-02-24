@@ -1,21 +1,22 @@
-/*
+/**
+ * @author Rohin Arora
+ * @email rohinarora07@gmail.com
+ * @create date 2020-02-23
+ * @modify date 2020-02-23
+ * @desc 
+
 
 This program will numerically compute the integral of
 
                   4/(1+x*x)
 
-from 0 to 1.  The value of this integral is pi -- which
-is great since it gives us an easy way to check the answer.
+from 0 to 1.  
 
-The is the original sequential program.  It uses the timer
-from the OpenMP runtime library
-
-History: Written by Tim Mattson, 11/99.
-
+This program introduces OpenMP for the application
 */
 #include <stdio.h>
 #include <omp.h>
-#define NUM_THREADS 6
+#define NUM_THREADS 2
 static long num_steps = 1000000000;
 double step;
 int main()

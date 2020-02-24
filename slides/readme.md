@@ -25,3 +25,11 @@
 * Slide 52. When we enter parallel region in OMP, we request a particular number of threads. The ENV can choose to give us fewer threads. Therefore, must query inside the ENV how many threads were actually allotted.
 * Slide 55. false sharing. parallel code not giving expected performance
 * Slide 56-58. Padding. Hacky. Good performance but not good solution
+  * Padding arrays requires deep knowledge of the cache architecture. Move to a machine with different sized cache lines and your software performance falls apart
+  * Using synchronization is better solution
+* Slide 61
+  * There is a lot of overhead is creating these critical sections. So design your code in a way that makes sure some substantial work is being done by all threads before they hit critical section
+  * Forms of synchronization.
+    * Barrier. Slide 63. All threads wait till everyone completes
+    * Mutual Exclusion. Slide 64. Only one thread at a time. Serializes the code. So keep this minimal runtime.
+    * Atomic. Slide 65. Provides mutual exclusion but only applies to the update of a memory location. When in doubt, use critical (mutual exclusion)

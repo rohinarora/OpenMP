@@ -14,12 +14,13 @@
   * pragma omp parallel - get me default number of system threads
   * my system has 12 threads. 2 threads per core
 * [2_parallel_pi_v1.c](./Code/2_parallel_pi_v1.c)
-  * pi
-  * hello world of OpenMP
-  * SPMD. Single program, multiple data
-  * Run multiple copies of the program
-  * Cyclic/round robin execution of threads
+  * Extends [v1](./Code/2_parallel_pi_v1.c). Calculate pi with OpenMP
+  * Key ideas -
+    * Promote scalar (sum) to an array dimensioned by number of threads to avoid race condition
+    * Only one thread should copy the number of threads to the global value to make sure multiple threads writing to the same address don’t conflict.
+    * For loop uses the most common trick in SPMD programs to create a cyclic/round robin distribution of loop(threads) iterations
   * run with 1,2,4,6 threads. scalability of threads is terrible. because of false sharing
+  * worse performance than [v1](./Code/2_parallel_pi_v1.c)
 * [2_parallel_pi_v2.c](./Code/2_parallel_pi_v2.c)
   * use padding to prevent false sharing. forces data of each thread to be on distinct cache lines
   * better performance than [v1](./Code/2_parallel_pi_v1.c)

@@ -3,9 +3,10 @@
  * @email rohinarora07@gmail.com
  * @create date 2020-02-22
  * @modify date 2020-02-22
- * @desc use of # pragma omp parallel
- * 
- */
+ 
+ use of # pragma omp parallel
+ 
+ **/
 
 
 
