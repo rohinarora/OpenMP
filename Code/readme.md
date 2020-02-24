@@ -1,3 +1,8 @@
+### Usage
+
+* clang -fopenmp  -L/usr/local/opt/llvm/lib -I/usr/local/opt/llvm/include \<filename\> && ./a.out
+* Works with clang version 9.0.1 , x86_64-apple-darwin19.3.0
+
 * [1_hello_world.c](./Code/1.c)
   * hello world of OpenMP
   * code in structured block following "# pragma omp parallel" is executed by every thread possibly available
@@ -30,9 +35,3 @@
   * Lesson: Put #pragma omp critical on the code where work done is minimal. Do not serialize your program. (Slide 71)
 * [2_parallel_pi_v4.c](./Code/2_parallel_pi_v4.c)
   * Start with [serial pi program](./Code/2_serial_pi.c) and add "omp for","reduction"
-
-
-### Usage
-
-* clang -fopenmp  -L/usr/local/opt/llvm/lib -I/usr/local/opt/llvm/include \<filename\> && ./a.out
-* Works with clang version 9.0.1 , x86_64-apple-darwin19.3.0
