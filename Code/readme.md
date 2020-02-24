@@ -49,8 +49,7 @@
   * Just 2 line change wrt [serial version](./src/2_serial_pi.c)
 * [3_mandel_bug.c](./src/3_mandel_bug.c)
   * Buggy version of Mandelbrot set. Incorrect answer
-* [3_mandel_fix.c](./src/3_mandel_fix.c)
-  * Fixed
+* [3_mandel_fix.c](./src/3_mandel_fix.c). Fixed
   ```
   1. firstprivate(eps) private(c, i, j)
   2. void testpoint(struct d_complex c) and void testpoint(struct d_complex);
