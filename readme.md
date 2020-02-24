@@ -32,6 +32,9 @@
   * Pi summation within the critical section now, since the local variable sum will be lost with stack once threads end
   * Performance as good as [v2](./Code/2_parallel_pi_v2.c). Portable code.
   * Lesson: Put #pragma omp critical on the code where work done is minimal. Do not serialize your program. (Slide 71)
+* [2_parallel_pi_v4.c](./Code/2_parallel_pi_v4.c)
+  * Start with [serial pi program](./Code/2_serial_pi.c) and add "omp for","reduction"
 
 ### ToDo
 * Add [google benchmark](https://github.com/google/benchmark) to codes
+* Slide 91. Try out different schedules

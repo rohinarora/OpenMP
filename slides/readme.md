@@ -54,3 +54,61 @@
   * would only need static and dynamic in most cases
 * Slide 79. Shorthand
 * #pragma omp for must follow "for loop"
+* Slide 80. Working with loops
+  * Make the loop iterations independent
+  * Expose concurrency in a problem, and map it on to processing units so that they they actually execute at the same time
+* Slide 81. For nested loops. Use collapse(num loops
+  * Useful if outer loop is O(no. of threads)
+* Slide 82-84. Reduction. reduction (op : list)
+* Slide 83.
+  * The variables in “list” must be shared in the enclosing parallel region
+  * See Slide :Inside a parallel or a work-sharing construct
+* Slide 84. Initial values. Also discussed in GPU class
+* Slide 91. Different schedules
+* Slide 94. Barriers
+  * Implicit barrier at the end of a "pragma omp parallel " region. Can't remove this barrier
+  * Implicit barrier at the end of a for worksharing construct. Here it means at end of "#pragma omp for"
+    * Can turn this off using nowait. If you think its next lines of code won't depend on the loop compute
+* Slide 95. Master Construct
+  * The master construct denotes a structured block that is only executed by the master thread.
+  * Use when you want just 1 thread to do something. No synchronization here. The other threads just skip it
+  * keeping #pragma omp barrier after master is a good practice
+* Slide 96. Single. Worksharing construct
+  * The first thread that reaches here does the work. But single is a worksharing construct. Barriers are implicit at end of worksharing constructs. Hence no explicit barrier needed with single (as needed with master).  Can remove this implicit barrier using nowait
+* Slide 97, Sections. Worksharing construct
+  * #pragma omp sections
+  * Implicit barrier at end of "#pragma omp sections"
+* Slide 98. Lock
+  * Lowest level of mutual exclusion synchronization
+  * Lock variable type is defined in omp.h-> lock_t
+  * omp_init_lock()
+  * omp_set_lock()
+  * omp_unset_lock()
+  * omp_destroy_lock()
+  * omp_test_lock()- normally if you check a lock, it automatically goes into wait if its busy. This just checks if its free or not, and based on it, does some action
+* Slide 99. Example- Making a histogram. Code on slide
+  * Imagine histogram is huge. Updating bins.
+  * Need to ensure no two bins are updated by 2 threads at the same time.
+  * If i put this in critical section, entire histogram update is serialized.
+  * Have a lock for each bin. This is the case of un-contended lock. The chance of 2 threads updating same bin at the same time is very low
+* Slide 100. Runtime library routines.
+  * omp_get_max_threads() - max threads possible. Use this to safely set the largest array for each thread. As arrays were set in ../Code/2_parallel_pi_v1.c
+  * omp_in_parallel()- Imagine sometimes a function is called within a parallel region.Sometimes its not. This checks whether i am in a parallel region
+  * omp_set_dynamic() -  sets dynamic mode
+  * omp_get_dynamic()- checks whether i am in dynamic mode
+  * omp_num_procs() - How many processors in the system?
+* Slide 101. Code. Runtime routines in action. See slide
+* Slide 102. Environment Variables. See slides
+  * OMP_NUM_THREADS
+  * OMP_STACKSIZE
+  * OMP_WAIT_POLICY
+    * Use passive only when you think thread will be sleeping for a long time.
+    * If wait time is small, let the thread spin (active)
+    * Putting the thread to sleep and waking it up has a cost
+  * OMP_PROC_BIND
+    * Bind thread to a processor, and do not move it. NUMA architectures
+    * Binding may have a cost. Ideally, if one processor gets too busy, OS might put threads on another core. Won't be possible with binding on
+* Slide 104. Data environment
+  * Heap/global shared
+  * Stack private
+* Slide 105
