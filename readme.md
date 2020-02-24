@@ -41,5 +41,5 @@
 
 ### Usage
 
-* clang -fopenmp  -L/usr/local/opt/llvm/lib -I/usr/local/opt/llvm/include <filename> && ./a.out
+* clang -fopenmp  -L/usr/local/opt/llvm/lib -I/usr/local/opt/llvm/include \<filename\> && ./a.out
 * Works with clang version 9.0.1 , x86_64-apple-darwin19.3.0
