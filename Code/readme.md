@@ -47,3 +47,14 @@
 * [2_parallel_pi_v4_2.c](./src/2_parallel_pi_v4.c)
   * Better implementation of [2_parallel_pi_v4.c](./src/2_parallel_pi_v4.c)
   * Just 2 line change wrt [serial version](./src/2_serial_pi.c)
+* [3_mandel_bug.c](./src/3_mandel_bug.c)
+  * Buggy version of Mandelbrot set. Incorrect answer
+* [3_mandel_fix.c](./src/3_mandel_fix.c)
+  * Fixed
+  ```
+  1. firstprivate(eps) private(c, i, j)
+  2. void testpoint(struct d_complex c) and void testpoint(struct d_complex);
+  3. #pragma omp atomic
+        numoutside++;
+  4. testpoint(c);
+  ```
