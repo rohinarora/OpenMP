@@ -29,8 +29,9 @@ int main()
 #pragma omp parallel
 	{
 		int i;
-		double x; 
-#pragma omp for reduction(+: sum) private(x)
+		double x;
+#pragma omp for reduction(+ \
+						  : sum) private(x)
 		for (i = 1; i <= num_steps; i++)
 		{
 			x = (i - 0.5) * step;		// or (i+0.5)*step; if i starts from 0

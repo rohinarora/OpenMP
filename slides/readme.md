@@ -112,3 +112,20 @@
   * Heap/global shared
   * Stack private
 * Slide 105
+  * index is on the heap coz it is declared prior to the parallel region
+* Slide 106.
+  * All data clauses apply to parallel constructs and worksharing constructs except “shared” which only applies to parallel constructs. “shared” doesn't apply to worksharing construct. Wouldn't even need shared with worksharing construct to think of it
+  * Default None. Forces you to declare every variable as shared or private. Very Useful for debuggin
+  * Default Shared. Default all variables shared above a construct as shared inside the construct. This is the default behavior. No need to mention
+  * Lastprivate- The final value of a private inside a parallel loop can be transmitted to the shared variable outside the loop
+  * firstprivate
+  * Shared, Private
+* Slide 109. firstprivate
+* Slide 110. lastprivate. Whatever the copy of this variable was in the thread that last run, set that as global value
+* Slide 112. Default(None). Good programming practice
+* Slide 118.
+  * A good parallel debugger is extremely helpful
+  * default(none) is very helpful when debugging manually
+* Slide 119. Mandelbrot Area program bug fix
+* Slide 121. Same as ../Code/2_parallel_pi_v4_2.c
+  * Just 2 line change. Goal for parallel programming. Serial code doesn't break. 
