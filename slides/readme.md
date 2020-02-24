@@ -23,7 +23,7 @@
     * Only three threads are created because the last parallel section will be invoked from the parent thread.
   * #pragma omp parallel num_threads(4)
 * Slide 52. When we enter parallel region in OMP, we request a particular number of threads. The ENV can choose to give us fewer threads. Therefore, must query inside the ENV how many threads were actually allotted.
-* Slide 55. false sharing. parallel code not giving expected performance
+* Slide 55. false sharing. parallel code not giving expected performance. Same thing also rephrased on slide 66
 * Slide 56-58. Padding. Hacky. Good performance but not good solution
   * Padding arrays requires deep knowledge of the cache architecture. Move to a machine with different sized cache lines and your software performance falls apart
   * Using synchronization is better solution
@@ -33,3 +33,7 @@
     * Barrier. Slide 63. All threads wait till everyone completes
     * Mutual Exclusion. Slide 64. Only one thread at a time. Serializes the code. So keep this minimal runtime.
     * Atomic. Slide 65. Provides mutual exclusion but only applies to the update of a memory location. When in doubt, use critical (mutual exclusion)
+* Slide 69-72. Use synchronization for pi program. More explanation in main readme. (v3 code)
+* Slide 74. Good. SPMD vs worksharing
+* Slide 75. "#pragma omp parallel" must be there to create threads/request OS for threads. "#pragma omp for" only uses the threads given by the OS
+  * Takes care of the cyclic distribution we were doing earlier automatically ([v1](../Code/2_parallel_pi_v1.c))

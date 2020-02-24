@@ -24,8 +24,14 @@
 * [2_parallel_pi_v2.c](./Code/2_parallel_pi_v2.c)
   * use padding to prevent false sharing. forces data of each thread to be on distinct cache lines
   * better performance than [v1](./Code/2_parallel_pi_v1.c)
-  * but hacky poor solution. how would you know the size of L1 cache line? wouldn't work across architectures/
+  * but hacky poor solution. how would you know the size of L1 cache line? wouldn't work across architectures
 * [2_parallel_pi_v3.c](./Code/2_parallel_pi_v3.c)
+  * Use synchronization to prevent false sharing and also prevent use of padding
+  * Create a scalar local to each thread to accumulate partial sums.
+    * Now sum variable on stack of each loop. False sharing automatically eliminated
+  * Pi summation within the critical section now, since the local variable sum will be lost with stack once threads end
+  * Performance as good as [v2](./Code/2_parallel_pi_v2.c). Portable code.
+  * Lesson: Put #pragma omp critical on the code where work done is minimal. Do not serialize your program. (Slide 71)
 
 ### ToDo
 * Add [google benchmark](https://github.com/google/benchmark) to codes

@@ -29,21 +29,22 @@ int main()
 	start_time = omp_get_wtime();
 #pragma omp parallel
 	{
-		int nthrds,i,id;
+		int nthrds, i, id;
 		double x;
-		id=omp_get_thread_num();
-		nthrds=omp_get_num_threads();
-		if (id == 0) nthreads = nthrds;
-		for (i = id, sum[id]=0.0; i <= num_steps; i+=nthrds)
+		id = omp_get_thread_num();
+		nthrds = omp_get_num_threads();
+		if (id == 0)
+			nthreads = nthrds;
+		for (i = id, sum[id] = 0.0; i <= num_steps; i += nthrds)
 		{
 			x = (i + 0.5) * step;
 			sum[id] += 4.0 / (1.0 + x * x);
 		}
 	}
 
-
-	for (int idx=0;idx<nthreads;++idx){
-		pi=pi+sum[idx];
+	for (int idx = 0; idx < nthreads; ++idx)
+	{
+		pi = pi + sum[idx];
 	}
 	pi = pi * step;
 	run_time = omp_get_wtime() - start_time;
