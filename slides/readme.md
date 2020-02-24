@@ -35,5 +35,22 @@
     * Atomic. Slide 65. Provides mutual exclusion but only applies to the update of a memory location. When in doubt, use critical (mutual exclusion)
 * Slide 69-72. Use synchronization for pi program. More explanation in main readme. (v3 code)
 * Slide 74. Good. SPMD vs worksharing
-* Slide 75. "#pragma omp parallel" must be there to create threads/request OS for threads. "#pragma omp for" only uses the threads given by the OS
+* Slide 75.
+  * "#pragma omp parallel" must be there to create threads/request OS for threads. "#pragma omp for" only uses the threads given by the OS
   * Takes care of the cyclic distribution we were doing earlier automatically ([v1](../Code/2_parallel_pi_v1.c))
+  * private(i) can be made explicit
+* Slide 76.
+  * sequential naive code
+  * SIMD code. Similar thing done previously in [v1](../Code/2_parallel_pi_v1.c)
+  * Neat code with #pragma omp for
+* Slide 77
+  * Worksharing constructs
+  * Compiler doesn't know how to distribute work in worksharing mechanism. Telling it explicitly is good
+  * The schedule clause affects how loop iterations are mapped onto threads
+  * static. compile time. If no chuck, 1 is default
+  * Dynamic runtime. When work across iterations changes a lot. Like thread pool example. Sieve of Eratosthenes. Slide 78. more
+  * guided. not used anymore
+  * more in slides
+  * would only need static and dynamic in most cases
+* Slide 79. Shorthand
+* #pragma omp for must follow "for loop"
