@@ -5,6 +5,12 @@
 
 ### Code Examples
 
+```
+1. Hello World
+2. Pi
+3. Mandelbrot Set
+```
+
 * [1_hello_world.c](./src/1.c)
   * hello world of OpenMP
   * code in structured block following "# pragma omp parallel" is executed by every thread possibly available
