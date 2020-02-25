@@ -6,9 +6,9 @@
 * [src](./Code/src) - Compute value of Pi, Area of Mandelbrot Set
 * [readme](./Code)
 
-### [3. Dense Matrix Multiplication speed up using OpenMP and blocking](./Code)
+### [3. Dense Matrix Multiplication speed up using OpenMP and blocking](./Dense_MatMul_OpenMP)
 
-### [4. Sparse Matrix Multiplication speed up using OpenMP](./Code)
+### [4. Sparse Matrix Multiplication speed up using OpenMP](./Sparse_MatMul_OpenMP)
 
 ### ToDo
 * Add [google benchmark](https://github.com/google/benchmark) to codes

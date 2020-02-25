@@ -131,3 +131,4 @@
   * Just 2 line change. Goal for parallel programming. Serial code doesn't break.
 * Slide 123. Review
 * Slide 124. There is no "while" loop in OpenMP. How to LL traversal?
+* Slide 127. OpenMP was mainly designed with

@@ -1,3 +1,11 @@
+/**
+ * @author Rohin Arora
+ * @email rohinarora07@gmail.com
+ * @create date 2020-02-22
+ * @modify date 2020-02-24
+ 
+
+ */
 #include <stdlib.h>
 #include <stdio.h>
 #include "omp.h"
