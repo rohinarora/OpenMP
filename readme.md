@@ -3,7 +3,8 @@
 * [readme](./slides)
 
 ### [2. Code Examples](./Code)
-* [src](./Code/src) - Compute value of Pi, Area of Mandelbrot Set
+##### Compute value of Pi, Area of Mandelbrot Set
+* [src](./Code/src)
 * [readme](./Code)
 
 ### [3. Dense Matrix Multiplication speed up using OpenMP and blocking](./Dense_MatMul_OpenMP)
