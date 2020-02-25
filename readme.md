@@ -2,8 +2,8 @@
 * [slides](./slides/Intro_To_OpenMP_Mattson.pdf)
 * [readme](./slides)
 
-### [2. Code Examples](./Code)
-#### Compute value of Pi, Area of Mandelbrot Set
+### [2. Code Examples using OpenMP](./Code)
+#### Compute value of Pi, Area of Mandelbrot Set, Linked List
 * [src](./Code/src)
 * [readme](./Code)
 
