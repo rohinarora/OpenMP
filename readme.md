@@ -3,7 +3,7 @@
 * [readme](./slides)
 
 ### [2. Code Examples](./Code)
-##### Compute value of Pi, Area of Mandelbrot Set
+#### Compute value of Pi, Area of Mandelbrot Set
 * [src](./Code/src)
 * [readme](./Code)
 
