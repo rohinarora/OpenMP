@@ -2,7 +2,7 @@
  clang -fopenmp -L/usr/local/opt/llvm/lib -I/usr/local/opt/llvm/include <filename.c> -o <output> && ./\<output>
 
 ### Speeding up dense matrix multiplication using openMP and blocking (ensures less cache miss)
-* Improves naive matrix multiply from 550ms to 44ms
+* Improves naive matrix multiply from 550ms to 44ms (6ms using -O3 flag)
 * Hardware: 15 inch Macbook Pro 2019
 
 #### Naive matrix multiplication
