@@ -1,5 +1,5 @@
 ### Usage
- clang -fopenmp -L/usr/local/opt/llvm/lib -I/usr/local/opt/llvm/include <filename.c> -o <output> && ./<output>
+ clang -fopenmp -L/usr/local/opt/llvm/lib -I/usr/local/opt/llvm/include <filename.c> -o <output> && ./\<output>
 
 ### Speeding up sparse matrix multiplication using openMP and sparse computation
 * Improves naive matrix multiply from 490ms to 7ms (2ms using -O3 flag)
